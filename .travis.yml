@@ -1,9 +1,11 @@
 language: python
-arch:
-  -amd64
-  -arm64
-python:
-- '3.8'
+
+matrix:
+  include:
+    - python: 3.8
+      arch: amd64
+    - python: 3.8
+      arch: arm64
 install: pip install tox tox-travis
 script: tox
 sudo: false
